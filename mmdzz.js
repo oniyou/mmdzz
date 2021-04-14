@@ -1,11 +1,16 @@
 const $ = new Env('萌喵大作战无限刷');
 
+let i = 0;
+let num = 50000;
 let mmdzzurl = '{"ed":"CubRB3xZt3P1xi8GYdkcDivoS/bzD4zXSmMi66pEXBC5+2EKuPsASRKUDtGWIrIb/VWmvD8pR/17uRwHEiVCLz/oNv3UD6emK4hjha5Q1H0="}'
 let mmdzzhd = '{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Content-Type":"application/json","Origin":"https://catxxx.higaoyao.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","platform":"ios","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwcm9kIiwiaWF0IjoxNjE4MTc1NjE5LCJleHAiOjE2MjA3MTM2MTksIm5iZiI6MTYxODE3NTYxOSwidWlkIjoxMDUzNTY0fQ.pA9Haqs9h5DHH8wXJSvwaSeHsf73I6o_pqFaKOLZlmk","versionCode":"33","Host":"xxlapi.higaoyao.com:553","Referer":"https://catxxx.higaoyao.com/v228/index.html","Accept-Language":"zh-tw","Accept":"*/*","Content-Length":"117"}'
 
 !(async () => {
   console.log(`\n开始【萌喵大作战】`)
-  await wxs();
+  while(i<num){
+   await wxs();
+   i++;
+}
 })()
 .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -25,12 +30,9 @@ function wxs(timeout = 0) {
         const result = JSON.parse(data)
         if (result.code == 200) {
           $.log(`\n萌喵大作战无限刷红包券:${result.msg}\n当前红包券:${result.data.roll_num}约等于` + result.data.roll_num / 10000 + '元')
-
           $.wait(10);
-          await wxs()
         } else {
           $.wait(10);
-          await wxs()
           console.log(result.msg)
         }
 
