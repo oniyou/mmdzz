@@ -2,7 +2,7 @@
 
 name: 萌猫大作战
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   workflow_dispatch:
@@ -28,3 +28,8 @@ jobs:
             - name: "运行【萌猫大作战】"
               run: |
                   node mmdzz.js
+              env:
+                  MMDZZHD: ${{ secrets.MMDZZHD }}
+                  MMDZZURL: ${{ secrets.MMDZZURL }}
+                  YGKCHD: ${{ secrets.YGKCHD }}
+                  YGKCURL: ${{ secrets.YGKCURL }}
