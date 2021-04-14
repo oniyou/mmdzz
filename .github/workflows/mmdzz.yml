@@ -27,7 +27,7 @@ jobs:
                   npm install
             - name: "运行【萌猫大作战】"
               run: |
-                  node mmdzz.js
+                  node index.js
               env:
                   MMDZZHD: ${{ secrets.MMDZZHD }}
                   MMDZZURL: ${{ secrets.MMDZZURL }}
