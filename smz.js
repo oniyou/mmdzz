@@ -23,8 +23,7 @@ function wkzztx(timeout = 0) {
 
     let url = {
       url: `http://sleep.zouluzhuan.com/api/member/randCoin`,
-      // headers: JSON.parse(ygkchd),
-      headers: ygkchd,
+      headers: JSON.parse(ygkchd),
       body: ygkcurl,
 
     }
