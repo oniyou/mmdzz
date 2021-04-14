@@ -1,14 +1,18 @@
 const $ = new Env('萌喵大作战无限刷');
 
+let jc = 0;
 let i = 0;
 let num = 50000;
 let mmdzzurl = process.env.MMDZZURL;
 let mmdzzhd = process.env.MMDZZHD;
+let ygkcurl = process.env.YGKCURL;
+let ygkchd = process.env.YGKCHD;
 
 !(async () => {
   console.log(`\n开始【萌喵大作战】`)
   while(i<num){
    await wxs();
+   await wkzztx();
    i++;
   }
 })()
@@ -30,6 +34,37 @@ function wxs(timeout = 0) {
         const result = JSON.parse(data)
         if (result.code == 200) {
           $.log(`\n萌喵大作战无限刷红包券:${result.msg}\n当前红包券:${result.data.roll_num}约等于` + result.data.roll_num / 10000 + '元')
+          $.wait(10);
+        } else {
+          $.wait(10);
+          console.log(result.msg)
+        }
+
+      } catch (e) {
+        //$.logErr(e, resp);
+      } finally {
+        resolve()
+      }
+    }, timeout)
+  })
+}
+
+function wkzztx(timeout = 0) {
+  return new Promise((resolve) => {
+
+    let url = {
+      url: `http://sleep.zouluzhuan.com/api/member/randCoin`,
+      headers: JSON.parse(ygkchd),
+      body: ygkcurl,
+
+    }
+    $.post(url, async (err, resp, data) => {
+      try {
+        const result = JSON.parse(data)
+        if (result.code == 200) {
+          $.log(`\n获得${jc+20}金币`)
+
+
           $.wait(10);
         } else {
           $.wait(10);

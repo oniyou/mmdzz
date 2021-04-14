@@ -35,10 +35,8 @@ function wkzztx(timeout = 0) {
 
 
           $.wait(10);
-          await wkzztx()
         } else {
           $.wait(10);
-          await wkzztx()
           console.log(result.msg)
         }
 
