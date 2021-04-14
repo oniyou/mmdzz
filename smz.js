@@ -11,7 +11,7 @@ let num = 50000;
   console.log(`\n开始【睡眠赚】`);
   while (i < num) {
     await wkzztx();
-    i++；
+    i++;
   }
 })()
 .catch((e) => $.logErr(e))
