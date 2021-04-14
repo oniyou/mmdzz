@@ -10,7 +10,7 @@ let mmdzzhd = '{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br",
   while(i<num){
    await wxs();
    i++;
-}
+  }
 })()
 .catch((e) => $.logErr(e))
   .finally(() => $.done())
