@@ -20,19 +20,21 @@ let num = 50000;
 // method
 function wkzztx(timeout = 0) {
   return new Promise((resolve) => {
+    let coin = ygkcurl.replace(/coin=\d/,`coin=100`)
+    coin = ygkcurl.replace(/double=\d/,`double=1`)
 
     let url = {
       url: `http://sleep.zouluzhuan.com/api/member/randCoin`,
       headers: JSON.parse(ygkchd),
-      body: ygkcurl,
+      body: coin,
 
     }
     $.post(url, async (err, resp, data) => {
       try {
         const result = JSON.parse(data)
         if (result.code == 200) {
+          $.log(`\nresult: `+JSON.stringify(result))
           $.log(`\n获得${jc+20}金币`)
-
 
           $.wait(10);
         } else {
