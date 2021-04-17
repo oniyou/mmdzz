@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: 睡眠赚
+name: 萌猫大作战
 
 # Controls when the action will run.
 on:
@@ -25,9 +25,9 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行【睡眠赚】"
+            - name: "运行【萌猫大作战】"
               run: |
-                  node smz.js
+                  node mmdzz.js
               env:
                   MMDZZHD: ${{ secrets.MMDZZHD }}
                   MMDZZURL: ${{ secrets.MMDZZURL }}

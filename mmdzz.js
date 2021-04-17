@@ -2,7 +2,7 @@ const $ = new Env('萌喵大作战无限刷');
 
 let jc = 0;
 let i = 0;
-let num = 50000;
+let num = 80000;
 let mmdzzurl = process.env.MMDZZURL;
 let mmdzzhd = process.env.MMDZZHD;
 let ygkcurl = process.env.YGKCURL;
@@ -12,7 +12,7 @@ let ygkchd = process.env.YGKCHD;
   console.log(`\n开始【萌喵大作战】`)
   while(i<num){
    await wxs();
-   await wkzztx();
+   // await wkzztx();
    i++;
   }
 })()
